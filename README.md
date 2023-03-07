@@ -1,5 +1,5 @@
 # zyacss
-由acss启发，通过scss特性进行封装的常用公共样式类
+由[sacss](https://github.com/s-acss/sacss "sacss")启发，通过scss特性进行封装的常用公共样式类
 
 如有自定义赋值，在@each中添加即可
 
