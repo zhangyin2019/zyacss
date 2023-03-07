@@ -1,0 +1,646 @@
+/**
+ * 公共样式
+ */
+.flex_ {
+  /* flex_xxx */
+  @for $i from 1 through 2 {
+    &#{$i} {
+      flex: $i;
+    }
+  }
+
+  /* flex_wrap */
+  &wrap {
+    flex-wrap: wrap;
+  }
+
+  &dir_ {
+    /* flex_dir_col */
+    &col {
+      flex-direction: column;
+    }
+  }
+
+  //
+}
+
+.dis_ {
+  /* dis_xxx */
+  @each $name, $it in (flex: flex, inl_flex: inline-flex, inl_blk: inline-block)
+  {
+    &#{$name} {
+      display: $it;
+    }
+  }
+
+  //
+}
+
+.grid_ {
+  /* grid_tem_col_rep_2_xxxfr */
+  &tem_ {
+    &col_ {
+      &rep_ {
+        @for $i from 2 through 5 {
+          &#{$i}_1fr {
+            grid-template-columns: repeat($i, 1fr);
+          }
+        }
+
+        //
+      }
+    }
+  }
+
+  /* grid_gap_xxx */
+  &gap_ {
+    @each $it in 8, 12, 16 {
+      &#{$it} {
+        grid-gap: $it + px;
+      }
+    }
+
+    //
+  }
+
+  /* grid_col_gap_xxx */
+  &col_ {
+    @each $it in 24 {
+      &gap_#{$it} {
+        grid-column-gap: $it + px;
+      }
+    }
+
+    //
+  }
+
+  //
+}
+
+.ju_ {
+  /* ju_con_xxx */
+  &con_ {
+    @each $name, $it in (cen: center, end: flex-end, bet: space-between) {
+      &#{$name} {
+        justify-content: $it;
+      }
+    }
+  }
+}
+
+.ali_ {
+  /* ali_it_xxx */
+  &it_ {
+    @each $name, $it in (cen: center, end: flex-end) {
+      &#{$name} {
+        align-items: $it;
+      }
+    }
+  }
+}
+
+.w_ {
+  /* w_xxx */
+  @each $it in 10, 14, 16, 24, 32, 40, 48, 56, 72, 80, 96, 120, 144, 152, 184,
+    200, 240, 320, 368, 375
+  {
+    &#{$it} {
+      width: $it + px;
+    }
+  }
+
+  /* w_xxx_per */
+  @each $it in 100 {
+    &#{$it}_per {
+      width: $it + 0%;
+    }
+  }
+
+  //
+}
+
+.h_ {
+  /* h_xxx */
+  @each $it in 1, 4, 12, 16, 24, 28, 32, 40, 48, 56, 72, 80, 120, 144, 304, 560,
+    667
+  {
+    &#{$it} {
+      height: $it + px;
+    }
+  }
+
+  /* h_xxx_per */
+  @each $it in 100 {
+    &#{$it}_per {
+      height: $it + 0%;
+    }
+  }
+
+  //
+}
+
+.min_ {
+  &h_ {
+    /* min_h_xxx */
+    @each $it in 480 {
+      &#{$it} {
+        min-height: $it + px;
+      }
+    }
+
+    //
+  }
+
+  //
+}
+
+.max_ {
+  &h_ {
+    /* max_h_xxx_vh */
+    @each $it in 70 {
+      &#{$it}_vh {
+        max-height: $it + vh;
+      }
+    }
+  }
+
+  //
+}
+
+.m_ {
+  /* m_xx_xxx */
+  @each $name, $it in (0_4: 0 4px, 0_10: 0 10px, 0_16: 0 16px, 0_24: 0 24px) {
+    &#{$name} {
+      margin: $it;
+    }
+  }
+
+  $map: (
+    neg_40: -40,
+    neg_16: -16,
+    neg_12: -12,
+    neg_10: -10,
+    neg_8: -8,
+    neg_4: -4,
+    neg_1: -1,
+    4: 4,
+    6: 6,
+    8: 8,
+    10: 10,
+    12: 12,
+    16: 16,
+    20: 20,
+    24: 24,
+    32: 32,
+    44: 44
+  );
+
+  &t_ {
+    /* m_t_xxx */
+    @each $name, $it in $map {
+      &#{$name} {
+        margin-top: $it + px;
+      }
+    }
+
+    //
+  }
+
+  &r_ {
+    /* m_r_xxx */
+    @each $name, $it in $map {
+      &#{$name} {
+        margin-right: $it + px;
+      }
+    }
+
+    //
+  }
+
+  &b_ {
+    /* m_b_xxx */
+    @each $name, $it in $map {
+      &#{$name} {
+        margin-bottom: $it + px;
+      }
+    }
+
+    /* m_b_0_ipt */
+    &0_ipt {
+      margin-bottom: 0 !important;
+    }
+
+    //
+  }
+
+  &l_ {
+    /* m_l_xxx */
+    @each $name, $it in $map {
+      &#{$name} {
+        margin-left: $it + px;
+      }
+    }
+
+    //
+  }
+
+  //
+}
+
+.p_ {
+  /* p_xx_xxx */
+  @each $name,
+    $it
+      in (
+        0_8: 0 8px,
+        0_16: 0 16px,
+        0_24: 0 24px,
+        4_12: 4px 12px,
+        8: 8px,
+        8_16: 8px 16px,
+        12_0: 12px 0,
+        12: 12px,
+        12_16: 12px 16px,
+        16: 16px,
+        20_16: 20px 16px,
+        24: 24px
+      )
+  {
+    &#{$name} {
+      padding: $it;
+    }
+  }
+
+  $map: 16, 52;
+
+  /* p_b_xxx */
+  &b_ {
+    @each $it in $map {
+      &#{$it} {
+        padding-bottom: $it + px;
+      }
+    }
+  }
+
+  /* p_l_xxx */
+  &l_ {
+    @each $it in $map {
+      &#{$it} {
+        padding-left: $it + px;
+      }
+    }
+  }
+
+  //
+}
+
+.text_ {
+  /* text_ali_xxx */
+  &ali_ {
+    &cen {
+      text-align: center;
+    }
+
+    //
+  }
+
+  //
+}
+
+.white_space_nowrap {
+  white-space: nowrap;
+}
+
+.word_break_break_all {
+  word-break: break-all;
+}
+
+.font_ {
+  /* font_xxx */
+  @each $it in 12, 14, 16, 18, 24, 32 {
+    &#{$it} {
+      font-size: $it + px;
+    }
+  }
+
+  &bold {
+    font-weight: bold;
+  }
+
+  //
+}
+
+.l_ {
+  &h_ {
+    /* l_h_xxx */
+    @each $it in 12, 24 {
+      &#{$it} {
+        line-height: $it + px;
+      }
+    }
+
+    /* l_h_xxx_per */
+    @each $it in 100, 150 {
+      &#{$it}_per {
+        line-height: $it / 100;
+      }
+    }
+
+    //
+  }
+
+  //
+}
+
+.line_1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.line_1_box {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.line_2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.col_ {
+  /* col_xxx */
+  @each $name,
+    $it
+      in (
+        303133: #303133,
+        444: #444,
+        606266: #606266,
+        999: #999,
+        fff: #fff,
+        FF5454: #ff5454,
+        66bb6a: #66bb6a,
+        FF5252: #ff5252,
+        F5A227: #f5a227,
+        a0bafb: #a0bafb,
+        185aff: #185aff
+      )
+  {
+    &#{$name} {
+      color: $it;
+    }
+  }
+
+  //
+}
+
+.bg_ {
+  &col_ {
+    /* col_xxx */
+    @each $name,
+      $it
+        in (
+          ddd: #ddd,
+          fff: #fff,
+          FAFAFA: #fafafa,
+          E3EEF8: #e3eef8,
+          E6E6E6: #e6e6e6,
+          F8F8F8: #f8f8f8,
+          EDEDED: #ededed,
+          F7F8FA: #f7f8fa,
+          F0F2F5: #f0f2f5,
+          185aff: #185aff,
+          F0F4FF: #f0f4ff,
+          rgba_0_0_0_20_per: rgba(0, 0, 0, 0.02),
+          rgba_255_255_255_50_per: rgba(255, 255, 255, 0.5),
+          rgba_51_108_249_80_per: rgba(51, 108, 249, 0.08),
+          rgba_24_90_255_80_per: rgba(24, 90, 255, 0.08)
+        )
+    {
+      &#{$name} {
+        background-color: $it;
+      }
+    }
+
+    //
+  }
+
+  //
+}
+
+.box_ {
+  /* box_sha_xxx */
+  &sha_ {
+    @each $name,
+      $it
+        in (
+          0_12_48_16_rgba_0_0_0_30_per: 0px 12px 48px 16px rgba(0, 0, 0, 0.03),
+          0_2_1_0_rgba_0_0_0_80_per: 0px 2px 1px 0px rgba(0, 0, 0, 0.08)
+        )
+    {
+      &#{$name} {
+        box-shadow: $it;
+      }
+    }
+  }
+
+  /* box_siz_xxx */
+  &siz_ {
+    &bor_box {
+      box-sizing: border-box;
+    }
+  }
+
+  //
+}
+
+.bor_ {
+  $map: (
+    sol_1_fff: solid 1px #fff,
+    sol_1_999: solid 1px #999,
+    sol_1_E6E6E6: solid 1px #e6e6e6,
+    sol_1_185aff: solid 1px #185aff,
+    sol_1_rgba_0_0_0_8_per: solid 1px rgba(0, 0, 0, 0.08),
+    sol_1_rgba_0_0_0_15_per: solid 1px rgba(0, 0, 0, 0.15),
+    sol_1_151_151_151_10_per: solid 1px rgba(151, 151, 151, 0.1),
+    sol_1_rgba_151_151_151_20_per: solid 1px rgba(151, 151, 151, 0.2),
+    sol_1_rgba_24_90_255_50_per: solid 1px rgba(24, 90, 255, 0.5),
+    sol_2_0_0_0_8_per: solid 2px rgba(0, 0, 0, 0.08),
+    sol_2_9_109_217_20_per: solid 2px rgba(9, 109, 217, 0.2),
+    dashed_1_ddd: dashed 1px #ddd,
+    dashed_1_185aff: dashed 1px #185aff
+  );
+
+  /* bor_x_xx_xxx */
+  @each $name, $it in $map {
+    &#{$name} {
+      border: $it;
+    }
+  }
+
+  /* bor_b_x_xx_xxx */
+  @each $name, $it in $map {
+    &b_#{$name} {
+      border-bottom: $it;
+    }
+  }
+
+  &rad_ {
+    /* bor_rad_xxx */
+    @each $name, $it in (2: 2px, 4: 4px, 50_per: 50%) {
+      &#{$name} {
+        border-radius: $it;
+      }
+    }
+  }
+
+  /* bor_spa_xxx */
+  &spa_ {
+    @each $name, $it in (0: 0, 0_12: 0 12px, 16_0: 16px 0) {
+      &#{$name} {
+        border-spacing: $it;
+      }
+    }
+  }
+
+  //
+}
+
+.pos_ {
+  /* pos_xxx */
+  @each $name, $it in (rel: relative, abs: absolute, fixed: fixed) {
+    &#{$name} {
+      position: $it;
+    }
+  }
+
+  //
+}
+
+.t_ {
+  /* t_xxx */
+  @each $it in 0 {
+    &#{$it} {
+      top: $it;
+    }
+  }
+
+  //
+}
+
+.r_ {
+  /* r_xxx */
+  @each $it in 0 {
+    &#{$it} {
+      right: $it;
+    }
+  }
+
+  //
+}
+
+.b_ {
+  /* b_xxx */
+  @each $it in 0 {
+    &#{$it} {
+      bottom: $it;
+    }
+  }
+
+  //
+}
+
+.l_ {
+  /* l_xxx */
+  @each $name, $it in (0: 0, 200_vw: 200vw) {
+    &#{$name} {
+      left: $it;
+    }
+  }
+
+  //
+}
+
+.z_ {
+  /* z_xxx */
+  @each $it in 0, 9999 {
+    &#{$it} {
+      z-index: $it;
+    }
+  }
+
+  //
+}
+
+.over_ {
+  $map: (
+    hid: hidden,
+    auto: auto
+  );
+
+  /* over_xxx */
+  @each $name, $it in $map {
+    &#{$name} {
+      overflow: $it;
+    }
+  }
+
+  /* over_y_xxx */
+  &y_ {
+    @each $name, $it in $map {
+      &#{$name} {
+        overflow-y: $it;
+      }
+    }
+  }
+
+  //
+}
+
+.opa_ {
+  /* opa_xxx */
+  @each $name, $it in (50_per: 0.5) {
+    &#{$name} {
+      opacity: $it;
+    }
+  }
+
+  //
+}
+
+.cur_ {
+  /* cur_xxx */
+  @each $name, $it in (pot: pointer, n_res: n-resize) {
+    &#{$name} {
+      cursor: $it;
+    }
+  }
+
+  //
+}
+
+.trans_ {
+  /* trans_all_xxx */
+  @each $name, $it in (500_ms: 0.5s) {
+    &all_#{$name} {
+      transition: all $it;
+    }
+  }
+
+  /* trans_rot_xxx_deg */
+  &rot_ {
+    @each $name,
+      $it in (neg_45: -45, 30: 30, 60: 60, 90: 90, 180: 180, 270: 270)
+    {
+      &#{$name}_deg {
+        transform: rotate($it + deg);
+      }
+    }
+  }
+
+  //
+}
