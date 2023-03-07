@@ -4,7 +4,7 @@
 如有自定义赋值，在@each中添加即可
 
 ## 使用方法
-安装scss
+安装sass
 
 copy zyacss.scss到项目本地
 
