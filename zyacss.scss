@@ -644,3 +644,24 @@
 
   //
 }
+
+.ani_ {
+  /* ani_xxx */
+  @each $name, $it in (rot_360_1_s: rotation 1s linear infinite) {
+    &#{$name} {
+      animation: $it;
+    }
+  }
+
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  //
+}
