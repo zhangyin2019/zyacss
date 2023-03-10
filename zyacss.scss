@@ -53,6 +53,17 @@
       }
     }
   }
+  
+  /* grid_col_xxx */
+  &col_ {
+    @for $i from 2 through 5 {
+      &#{$i} {
+        grid-column: span $i;
+      }
+    }
+
+    //
+  }
 
   /* grid_gap_xxx */
   &gap_ {
