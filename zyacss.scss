@@ -26,7 +26,9 @@
 
 .dis_ {
   /* dis_xxx */
-  @each $name, $it in (flex: flex, inl_flex: inline-flex, inl_blk: inline-block)
+  @each $name,
+    $it
+      in (flex: flex, grid: grid, inl_flex: inline-flex, inl_blk: inline-block)
   {
     &#{$name} {
       display: $it;
