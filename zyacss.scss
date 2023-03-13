@@ -413,7 +413,7 @@
 
 .bg_ {
   &col_ {
-    /* col_xxx */
+    /* bg_col_xxx */
     @each $name,
       $it
         in (
