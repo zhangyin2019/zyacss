@@ -431,11 +431,12 @@
           rgba_0_0_0_20_per: rgba(0, 0, 0, 0.02),
           rgba_255_255_255_50_per: rgba(255, 255, 255, 0.5),
           rgba_51_108_249_80_per: rgba(51, 108, 249, 0.08),
-          rgba_24_90_255_80_per: rgba(24, 90, 255, 0.08)
+          rgba_24_90_255_80_per: rgba(24, 90, 255, 0.08),
+          lin_gra_0_deg_1890FF_00e0ec: linear-gradient(0deg, #1890FF, #00e0ec)
         )
     {
       &#{$name} {
-        background-color: $it;
+        background: $it;
       }
     }
 
