@@ -78,7 +78,7 @@
 
   /* grid_col_gap_xxx */
   &col_ {
-    @each $it in 24 {
+    @each $it in 16, 24 {
       &gap_#{$it} {
         grid-column-gap: $it + px;
       }
