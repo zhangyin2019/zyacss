@@ -75,6 +75,17 @@
 
     //
   }
+  
+  /* grid_row_gap_xxx */
+  &col_ {
+    @each $it in 16, 24 {
+      &gap_#{$it} {
+        grid-row-gap: $it + px;
+      }
+    }
+
+    //
+  }
 
   /* grid_col_gap_xxx */
   &col_ {
